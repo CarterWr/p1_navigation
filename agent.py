@@ -75,7 +75,7 @@ class Agent():
         return None
     
     
-    def epsilon_update(self, e_decay=.05, e_min=.1):
+    def epsilon_update(self, e_decay=.002, e_min=.1):
         """
         Updates epsilon, call this function in the training loop
         
