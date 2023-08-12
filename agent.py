@@ -15,7 +15,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 class Agent():
     """learns the enviroment and interactis with it"""
     
-    def __init__(self, action_size, state_size, seed, eps=1.0, lr=0.05, gamma=0.6, TAU=0.001, batch_size=64, buffer_size=int(1e5)):
+    def __init__(self, action_size, state_size, seed, eps=1.0, lr=0.05, gamma=0.8, TAU=0.001, batch_size=64, buffer_size=int(1e5)):
         """
         Initalizes a agent object
         
@@ -75,7 +75,7 @@ class Agent():
         return None
     
     
-    def epsilon_update(self, e_decay=.002, e_min=.1):
+    def epsilon_update(self, e_decay=.005, e_min=.01):
         """
         Updates epsilon, call this function in the training loop
         
